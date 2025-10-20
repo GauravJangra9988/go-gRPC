@@ -11,7 +11,7 @@ func (s *helloServer) SayHelloServerStreaming(req *pb.NamesList, stream pb.Greet
 
 	for _, name := range req.Names {
 		res := &pb.HelloResponse{
-			Message: "Hello" + name,
+			Message: "Hello " + name,
 		}
 
 		err := stream.Send(res)
@@ -25,3 +25,5 @@ func (s *helloServer) SayHelloServerStreaming(req *pb.NamesList, stream pb.Greet
 
 
 }
+
+
