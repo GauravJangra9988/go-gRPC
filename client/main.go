@@ -21,17 +21,21 @@ func main() {
 
 	defer conn.Close()
 
-	client := pb.NewGreetServiceClient(conn)
 
-	names := &pb.NamesList{
-		Names: []string{"A","B","C"},
-	}
+	// clientHelloResponse := pb.NewGreetServiceClient(conn)
+	clientFileUpload := pb.NewUploadServiceClient(conn)
 
-	callSayHello(client)
+	// names := &pb.NamesList{
+	// 	Names: []string{"A","B","C"},
+	// }
 
-	callSayHelloStream(client, names)
+	// callSayHello(clientHelloResponse)
 
-	callSayHelloClientStreaming(client, names)
+	// callSayHelloStream(clientHelloResponse, names)
 
-	callSayHelloBidirectional(client, names)
+	// callSayHelloClientStreaming(clientHelloResponse, names)
+
+	// callSayHelloBidirectional(clientHelloResponse, names)
+
+	callUploadFile(clientFileUpload, "./client.txt")
 }
