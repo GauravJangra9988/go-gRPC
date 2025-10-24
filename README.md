@@ -1,1 +1,1 @@
-gRPC implementation in Go
+gRPC implementation with file transfer in Go
